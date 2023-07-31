@@ -1,0 +1,85 @@
+<html>
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>CA4 JavaScript, CSS</title>
+
+        <style>
+
+            #buttons {list-style-type: none;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: row;}
+            
+            body {width: 800px;}
+            #image {width: 650px;}
+            #text {width: 700px;}
+            
+            :root {
+                --primary-color: white;
+                --secondary-color: yellow;
+                --bg-color: rgb(237, 26, 59);
+                --font-color: rgb(64, 64, 64);
+                --heading-color: orange;}
+            
+            [data-theme="blue"] {
+                --primary-color: white;
+                --secondary-color: green;
+                --bg-color: rgb(2, 165, 226);
+                --font-color: black;
+                --heading-color: purple;}
+                        
+            body {color: var(--font-color);
+                background-color: var(--bg-color);}
+            #text {background-color: var(--primary-color);}
+            
+            #buttons {margin-left: -40px;}
+ 
+        </style>
+
+        <script>
+            var isRed = true;
+
+            function themeChange() {
+                var e = document.querySelector(":root");
+                
+                if ( isRed = true ) {
+                    e.setAttribute("data-theme", "blue");
+                    isRed = false;
+                }else {
+                    e.setAttribute("data-theme", "red");
+                    isRed = true;}
+                }
+        </script>
+
+    </head>
+    <body>
+        <img id="image" src="http://www.outgrabe.net/bird00.jpg"></img>
+        <p id="text">Pardalote by fir0002 (CC-by-NC)</p>
+
+        <ul id="buttons">
+            <li><button onclick="document.getElementById('image').src='http://www.outgrabe.net/bird00.jpg';
+            document.getElementById('text').innerHTML = 'Pardalote by fir0002 (CC-by-NC)';"
+            >Pardalote</button></li>
+            
+            <li><button onclick="document.getElementById('image').src='http://www.outgrabe.net/bird01.jpg';
+            document.getElementById('text').innerHTML = 'Purple swamp hen by Toby Hudson (CC-by-SA)';"
+            >Purple Swamp Hen</button></li>
+        
+            <li><button onclick="document.getElementById('image').src='http://www.outgrabe.net/bird02.jpg';
+            document.getElementById('text').innerHTML = 'White-headed Stilt by JJ Harrison (CC-by-SA)';"
+            >White-headed Stilt</button></li>
+
+            <li><button onclick="document.getElementById('image').src='http://www.outgrabe.net/bird03.jpg';
+            document.getElementById('text').innerHTML = 'Inland Thornbill by Peter Jacobs (CC-by-SA)';"
+            >Inland Thornbill</button></li>
+
+            <li><button onclick="document.getElementById('image').src='http://www.outgrabe.net/bird04.jpg';
+            document.getElementById('text').innerHTML = 'Rose Robin by JJ Harrison (CC-by-SA)';"
+            >Rose Robin</button></li>
+        </ul>
+    
+        <button id="theme" onclick="themeChange()">Change Theme</button>
+    </body>
+</html>
